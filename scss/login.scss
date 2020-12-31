@@ -1,0 +1,88 @@
+@import './1-helper/variables';
+
+body {
+  background: #550c69;
+}
+
+.form-card-wrapper {
+  min-height: 100vh;
+}
+
+.form-card {
+  width: 90%;
+  max-width: 850px;
+  min-height: 400px;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+
+  &_left {
+    background: radial-gradient(#dd7cff, #0018ffa6);
+  }
+
+  &_right {
+    padding: 2rem 1.5rem;
+  }
+
+  img {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.form {
+  .error-msg {
+    color: #f75555;
+    margin: 0;
+    font-size: 0.85rem;
+    display: none;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  p {
+    color: #777;
+
+    a {
+      color: #001aff;
+    }
+  }
+}
+
+.form--signup,
+.form--login {
+  button {
+    padding: 0.6rem 1rem;
+    background: #7c1897;
+    border: none;
+    color: #fff;
+    border-radius: 2px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    &:focus,
+    &:hover {
+      background: darken(#7c1897, 10%);
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .form-card {
+    flex-direction: row;
+
+    &_left {
+      width: 50%;
+    }
+
+    &_right {
+      width: 50%;
+      align-self: center;
+    }
+  }
+}

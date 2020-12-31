@@ -1,0 +1,22 @@
+.footer {
+  background: #041628;
+  color: #fff;
+  padding: 1.5rem 0;
+
+  p {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  a {
+    font-size: 0.75rem;
+    margin-right: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}

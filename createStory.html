@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/dashboard.css">
+</head>
+
+<body>
+  <div class="site-wrapper d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <header class="sidebar_header">
+        <div>
+          <svg class="user-img">
+            <use href="/assets/images/sprites.svg#user"></use>
+          </svg>
+          <p class="user-name">John Doe</p>
+        </div>
+      </header>
+
+      <nav>
+        <a class="nav-link" href="/dashboard.html">Dashboard</a>
+        <a class="nav-link is-active" href="/createStory.html">Create New</a>
+      </nav>
+    </div>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="main_header d-flex justify-between align-center">
+        <a href="/" class="logo d-flex align-center">
+          <svg>
+            <use href="/assets/images/sprites.svg#book"></use>
+          </svg>
+          <span>Stories</span>
+        </a>
+
+        <a href="/dashboard.html" class="btn-lg btn-success btn-round">Dashboard</a>
+      </header>
+
+      <!-- CREATE STORY FORM  -->
+      <form class="create-story-form" id="createStoryForm">
+        <div class="form-group">
+          <div class="d-flex align-end justify-between">
+            <label class="label-heading" for="storyTitle">Story Title</label>
+            <span id="titleLtrCount">0/40</span>
+          </div>
+          <input type="text" name="storyTitle" id="storyTitle" class="form-field" maxlength="40">
+        </div>
+
+        <div class="form-group">
+          <div class="d-flex align-end justify-between">
+            <label class="label-heading" for="summary">Summary</label>
+            <span id="summaryLtrCount">0/200</span>
+          </div>
+          <textarea name="summary" id="summary" class="form-field summary" maxlength="200"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="label-heading" for="storyBody">Story</label>
+          <textarea name="storyBody" id="storyBody" class="form-field storyBody"></textarea>
+        </div>
+
+        <!-- SELECT TAGS -->
+        <div class="select-tags">
+          <h4 class="select-tags_heading">Select tags for your story <span>( it helps search engine to find your
+              story )</span></h4>
+
+          <div class="tags d-flex flex-wrap">
+            <div>
+              <input type="checkbox" name="tag" value="comedy" id="comedy">
+              <label class="tag tag-comedy" for="comedy">comedy</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="tag" value="horror" id="horror">
+              <label class="tag tag-horror" for="horror">horror</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="tag" value="romance" id="romance">
+              <label class="tag tag-romance" for="romance">romance</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="tag" value="mystery" id="mystery">
+              <label class="tag tag-mystery" for="mystery">mystery</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="tag" value="murder" id="murder">
+              <label class="tag tag-murder" for="murder">murder</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="tag" value="slice-of-life" id="slice-of-life">
+              <label class="tag tag-slice-of-life" for="slice-of-life">slice of life</label>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn-lg btn-primary">Submit</button>
+      </form>
+    </main>
+  </div>
+
+  <script>
+    const titleLetterCount = document.getElementById("titleLtrCount")
+    const summaryLetterCount = document.getElementById("summaryLtrCount")
+
+    document.getElementById("storyTitle").addEventListener("input", function () {
+      titleLetterCount.textContent = `${this.value.length}/40`;
+    });
+
+    document.getElementById("summary").addEventListener("input", function () {
+      summaryLetterCount.textContent = `${this.value.length}/200`;
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+.sidebar {
+  min-width: 280px;
+  background: dodgerblue;
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+
+  &_header {
+    margin-bottom: 3rem;
+
+    svg {
+      font-size: 6rem;
+    }
+  }
+
+  .nav-link {
+    display: block;
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 250ms ease-in-out;
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    &.is-active,
+    &:focus,
+    &:hover {
+      background: #fff;
+      color: dodgerblue;
+    }
+  }
+}

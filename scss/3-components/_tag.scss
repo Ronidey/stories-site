@@ -1,0 +1,36 @@
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: rgb(42, 42, 42);
+  border-radius: 100vh;
+  font-size: 0.8rem;
+  color: #fff;
+  margin-right: 0.5rem;
+  transition: 200ms ease;
+
+  &:focus,
+  &:hover {
+    filter: brightness(0.8);
+  }
+}
+
+.tag-comedy {
+  background: #ffb800;
+}
+
+.tag-romance,
+.tag-yuri {
+  background: #ef76aa;
+}
+
+.tag-slice-of-life {
+  background: #16b937;
+}
+
+.tag-murder {
+  background: #ff7474;
+}
+
+.tag-suspense {
+  background: #8e68ce;
+}

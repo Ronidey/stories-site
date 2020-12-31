@@ -1,0 +1,56 @@
+.story-overview {
+  &_header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .story-overview_header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.story-title {
+  font-size: 2rem;
+  font-family: $ff-secondary;
+  text-transform: capitalize;
+  font-weight: 700;
+  margin: 0;
+}
+
+.story-summary {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.1em;
+}
+
+.story-body {
+  line-height: 2;
+}
+
+.story-header-ctrls {
+  margin-right: 2rem;
+
+  svg,
+  button {
+    font-size: 1.5rem;
+
+    &:focus,
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .btn-edit {
+    color: $clr-primary;
+  }
+
+  .btn-delete {
+    color: $clr-danger;
+  }
+}

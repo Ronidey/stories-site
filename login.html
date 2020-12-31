@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/login.css">
+</head>
+
+<body>
+  <main>
+    <div class="form-card-wrapper d-flex justify-center align-center">
+      <div class="form-card">
+        <div class="form-card_left d-flex justify-center align-center">
+          <img src="/assets/images/reading-2.svg" alt="">
+        </div>
+
+        <div class="form-card_right">
+          <form class="form form--login" id="loginForm">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <p class="error-msg"></p>
+              <input type="email" name="email" id="email" class="form-field">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <p class="error-msg"></p>
+              <input type="password" name="password" id="password" class="form-field">
+            </div>
+            <p>New here? <a href="/signup.html">signup</a></p>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const email = this.email.value.toLowerCase().trim();
+      if (!email) {
+        this.email.previousElementSibling.style.display = "block";
+        this.email.previousElementSibling.textContent = "email is required!";
+      }
+
+      const password = this.password.value;
+      if (!password) {
+        this.password.previousElementSibling.style.display = "block";
+        this.password.previousElementSibling.textContent = "password is required!";
+      }
+
+      if (email, password) {
+        setTimeout(() => {
+          location.href = "/"
+        }, 1000);
+      }
+    })
+  </script>
+</body>
+
+</html>

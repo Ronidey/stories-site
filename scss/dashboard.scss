@@ -1,0 +1,28 @@
+@import './1-helper/variables';
+@import './4-layout/sidebar';
+@import './4-layout/create-story-form';
+
+.sidebar {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    display: block;
+  }
+}
+
+.main {
+  padding: 0 1.5rem 4rem 1.5rem;
+  flex: 1;
+  max-width: 1000px;
+
+  &_header {
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+  }
+}
+
+.stories-container > * + * {
+  margin-top: 3rem;
+}

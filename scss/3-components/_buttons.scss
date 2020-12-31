@@ -1,0 +1,47 @@
+.btn {
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  padding: 0.45rem 0.85rem;
+}
+
+.btn-lg {
+  @extend .btn;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+}
+
+.btn-round {
+  border-radius: 100vh;
+}
+
+.btn-primary {
+  background: $clr-primary;
+  color: #fff;
+
+  &:focus,
+  &:hover {
+    background: darken($clr-primary, 10%);
+  }
+}
+
+.btn-success {
+  background: #35ce35;
+  color: #fff;
+
+  &:focus,
+  &:hover {
+    background: darken(#35ce35, 10%);
+  }
+}
+
+.btn-danger {
+  background: $clr-danger;
+  color: #fff;
+
+  &:focus,
+  &:hover {
+    background: darken($clr-danger, 15%);
+  }
+}

@@ -1,0 +1,17 @@
+.btn-icon {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-family: cursive;
+  color: $clr-primary;
+  font-weight: 600;
+
+  span {
+    margin-left: 0.2rem;
+  }
+}

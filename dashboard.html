@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/dashboard.css">
+</head>
+
+<body>
+  <div class="site-wrapper d-flex">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <header class="sidebar_header">
+        <div>
+          <svg class="user-img">
+            <use href="/assets/images/sprites.svg#user"></use>
+          </svg>
+          <p class="user-name">John Doe</p>
+        </div>
+      </header>
+
+      <nav>
+        <a class="nav-link is-active" href="/dashboard.html">Dashboard</a>
+        <a class="nav-link" href="/createStory.html">Create New</a>
+      </nav>
+    </div>
+
+    <!-- Main -->
+    <main class="main">
+      <header class="main_header d-flex justify-between align-center">
+        <a href="/" class="logo d-flex align-center">
+          <svg>
+            <use href="/assets/images/sprites.svg#book"></use>
+          </svg>
+          <span>Stories</span>
+        </a>
+
+        <a href="/createStory.html" class="btn-lg btn-success btn-round">Create New</a>
+      </header>
+
+      <div class="stories-container">
+        <div class="story-overview">
+          <header class="story-overview_header">
+            <a href="/story.html">
+              <h2 class="story-title">The day i became a god</h2>
+            </a>
+
+            <div class="story-header-ctrls">
+              <a href="/createStory.html" class="btn-edit">
+                <svg>
+                  <use href="/assets/images/sprites.svg#edit"></use>
+                </svg>
+              </a>
+              <button class="btn-icon btn-delete">
+                <svg>
+                  <use href="/assets/images/sprites.svg#delete"></use>
+                </svg>
+              </button>
+            </div>
+          </header>
+          <p class="story-summary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nam
+            dignissimos soluta ex debitis? Facilis ut officia harum alias aperiam consectetur! Necessitatibus et
+            veritatis quisquam quia voluptatum reiciendis, omnis blanditiis.</p>
+          <footer class="story-overview_footer">
+            <a href="#" class="tag tag-comedy">comedy</a>
+            <a href="#" class="tag tag-romance">romance</a>
+            <a href="#" class="tag tag-slice-of-life">slice of life</a>
+          </footer>
+        </div>
+
+        <div class="story-overview">
+          <header class="story-overview_header">
+            <a href="/story.html">
+              <h2 class="story-title">Death note</h2>
+            </a>
+
+            <div class="story-header-ctrls">
+              <a href="/createStory.html" class="btn-edit">
+                <svg>
+                  <use href="/assets/images/sprites.svg#edit"></use>
+                </svg>
+              </a>
+              <button class="btn-icon btn-delete">
+                <svg>
+                  <use href="/assets/images/sprites.svg#delete"></use>
+                </svg>
+              </button>
+            </div>
+          </header>
+          <p class="story-summary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nam
+            dignissimos soluta ex debitis? Facilis ut officia harum alias aperiam consectetur! Necessitatibus et
+            veritatis quisquam quia voluptatum reiciendis, omnis blanditiis.</p>
+          <footer class="story-overview_footer">
+            <a href="#" class="tag tag-mystery">mystery</a>
+            <a href="#" class="tag tag-murder">murder</a>
+            <a href="#" class="tag tag-suspense">suspence</a>
+          </footer>
+        </div>
+
+        <div class="story-overview">
+          <header class="story-overview_header">
+            <a href="/story.html">
+              <h2 class="story-title">Bloom Into You</h2>
+            </a>
+
+            <div class="story-header-ctrls">
+              <a href="/createStory.html" class="btn-edit">
+                <svg>
+                  <use href="/assets/images/sprites.svg#edit"></use>
+                </svg>
+              </a>
+              <button class="btn-icon btn-delete">
+                <svg>
+                  <use href="/assets/images/sprites.svg#delete"></use>
+                </svg>
+              </button>
+            </div>
+          </header>
+          <p class="story-summary">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur nam
+            dignissimos soluta ex debitis? Facilis ut officia harum alias aperiam consectetur! Necessitatibus et
+            veritatis quisquam quia voluptatum reiciendis, omnis blanditiis.</p>
+          <footer class="story-overview_footer">
+            <a href="#" class="tag tag-yuri">yuri</a>
+            <a href="#" class="tag tag-romance">romance</a>
+            <a href="#" class="tag tag-slice-of-life">slice of life</a>
+          </footer>
+        </div>
+      </div>
+
+      <div class="pagination">
+        <a href="#" class="pagination_link is-active">1</a>
+        <a href="#" class="pagination_link">2</a>
+        <a href="#" class="pagination_link">3</a>
+        <a href="#" class="pagination_link">4</a>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const deleteBtns = document.querySelectorAll(".btn-delete");
+
+    for (let btn of deleteBtns) {
+      btn.addEventListener("click", async function () {
+        // Disable all delete btns until we get user response
+        deleteBtns.forEach(btn => btn.setAttribute("disabled", true));
+
+        const resp = await customConfirm("You wanna DELETE this post?");
+        deleteBtns.forEach(btn => btn.removeAttribute("disabled")); // Enable all delete btns
+      })
+    }
+
+    function customConfirm(msg) {
+      const div = document.createElement("div");
+      const btnYes = document.createElement("button");
+      const btnNo = document.createElement("button");
+      const h4 = document.createElement("h4");
+      const p = document.createElement("p");
+
+      div.className = "modal modal--confirm";
+      setTimeout(() => {
+        div.classList.add("show");
+      }, 10);
+
+      btnYes.className = "btn-lg btn-success";
+      btnNo.className = "btn-lg btn-danger";
+      h4.className = "modal--confirm_heading";
+      p.className = "modal--confirm_text";
+
+      h4.textContent = "Are you sure?";
+      p.textContent = msg;
+      btnYes.textContent = "Yes";
+      btnNo.textContent = "No";
+
+      div.appendChild(h4);
+      div.appendChild(p);
+      div.appendChild(btnNo);
+      div.appendChild(btnYes);
+
+      document.body.insertAdjacentElement("afterbegin", div);
+
+      return new Promise((resolve, reject) => {
+        btnYes.onclick = () => {
+          div.parentElement.removeChild(div);
+          resolve("Yes");
+        };
+        btnNo.onclick = () => {
+          div.parentElement.removeChild(div);
+          resolve("No");
+        };
+      });
+    }
+  </script>
+</body>
+
+</html>

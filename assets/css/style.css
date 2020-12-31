@@ -1,0 +1,394 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  line-height: 1.6;
+  font-family: "Raleway", sans-serif;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5rem 0;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+input[type=search],
+input[type=text],
+input[type=email],
+input[type=password] {
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+textarea {
+  font-size: inherit;
+  font-family: inherit;
+  resize: vertical;
+  line-height: inherit;
+}
+
+svg {
+  width: 1em;
+  height: 1em;
+  font-size: 1.5em;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.justify-between {
+  justify-content: space-between !important;
+}
+
+.justify-center {
+  justify-content: center !important;
+}
+
+.justify-end {
+  justify-content: flex-end !important;
+}
+
+.align-center {
+  align-items: center !important;
+}
+
+.align-start {
+  align-items: flex-start !important;
+}
+
+.align-end {
+  align-items: flex-end !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/fonts/Raleway/Raleway-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/fonts/Raleway/Raleway-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/fonts/Raleway/Raleway-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("/assets/fonts/Raleway/Raleway-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/assets/fonts/Crimson_Text/CrimsonText-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Crimson Text";
+  src: url("/assets/fonts/Crimson_Text/CrimsonText-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+.btn-icon {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-family: cursive;
+  color: dodgerblue;
+  font-weight: 600;
+}
+.logo span {
+  margin-left: 0.2rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  background: #2a2a2a;
+  border-radius: 100vh;
+  font-size: 0.8rem;
+  color: #fff;
+  margin-right: 0.5rem;
+  transition: 200ms ease;
+}
+.tag:focus, .tag:hover {
+  filter: brightness(0.8);
+}
+
+.tag-comedy {
+  background: #ffb800;
+}
+
+.tag-romance,
+.tag-yuri {
+  background: #ef76aa;
+}
+
+.tag-slice-of-life {
+  background: #16b937;
+}
+
+.tag-murder {
+  background: #ff7474;
+}
+
+.tag-suspense {
+  background: #8e68ce;
+}
+
+.pagination {
+  margin: 3.5rem 0;
+}
+.pagination a + a {
+  margin-left: 0.75rem;
+}
+.pagination_link {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid dodgerblue;
+  color: dodgerblue;
+  text-align: center;
+  line-height: 30px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.pagination_link.is-active {
+  background: dodgerblue;
+  color: #fff;
+}
+
+.story-overview_header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 550px) {
+  .story-overview_header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.story-title {
+  font-size: 2rem;
+  font-family: "Crimson Text", serif;
+  text-transform: capitalize;
+  font-weight: 700;
+  margin: 0;
+}
+
+.story-summary {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1.1em;
+}
+
+.story-body {
+  line-height: 2;
+}
+
+.story-header-ctrls {
+  margin-right: 2rem;
+}
+.story-header-ctrls svg,
+.story-header-ctrls button {
+  font-size: 1.5rem;
+}
+.story-header-ctrls svg:focus, .story-header-ctrls svg:hover,
+.story-header-ctrls button:focus,
+.story-header-ctrls button:hover {
+  transform: scale(1.1);
+}
+.story-header-ctrls .btn-edit {
+  color: dodgerblue;
+}
+.story-header-ctrls .btn-delete {
+  color: #ff4f62;
+}
+
+.modal {
+  width: 280px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%) scale(1.25);
+  background: #fff;
+  box-shadow: 0 0 15px -5px rgba(0, 0, 0, 0.35);
+  padding: 2rem 1rem;
+  border-radius: 4px;
+  transition: all 300ms ease-in-out;
+  z-index: 99;
+}
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.modal--auth a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  transition: background 150ms ease-in-out;
+}
+.modal--auth a:nth-child(1) {
+  background: dodgerblue;
+  margin-bottom: 0.75rem;
+}
+.modal--auth a:nth-child(1):focus, .modal--auth a:nth-child(1):hover {
+  background: #006ad1;
+}
+.modal--auth a:nth-child(2) {
+  background: #ff4f62;
+}
+.modal--auth a:nth-child(2):focus, .modal--auth a:nth-child(2):hover {
+  background: #ff031e;
+}
+
+.modal--auth-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #403e3d;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  transform: translate(33%, -40%);
+  text-align: center;
+  line-height: 40px;
+}
+.modal--auth-close:focus, .modal--auth-close:hover {
+  background: #222;
+}
+
+.modal--confirm {
+  text-align: center;
+}
+.modal--confirm_heading {
+  font-size: 1.3rem;
+  text-transform: capitalize;
+}
+.modal--confirm p {
+  color: #333;
+}
+.modal--confirm button {
+  margin: 0 0.25rem;
+}
+
+.btn, .btn-lg {
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  padding: 0.45rem 0.85rem;
+}
+
+.btn-lg {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+}
+
+.btn-round {
+  border-radius: 100vh;
+}
+
+.btn-primary {
+  background: dodgerblue;
+  color: #fff;
+}
+.btn-primary:focus, .btn-primary:hover {
+  background: #0077ea;
+}
+
+.btn-success {
+  background: #35ce35;
+  color: #fff;
+}
+.btn-success:focus, .btn-success:hover {
+  background: #29a729;
+}
+
+.btn-danger {
+  background: #ff4f62;
+  color: #fff;
+}
+.btn-danger:focus, .btn-danger:hover {
+  background: #ff031e;
+}
+
+.container {
+  padding: 0 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=style.css.map */
